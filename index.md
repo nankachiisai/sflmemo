@@ -30,3 +30,22 @@ module adder (
     assign c = tmp[32];
 endmodule
 ```
+
+```sfl
+declare adder {
+    input a<32>;
+    input b<32>;
+    output s<32>;
+    output c;
+}
+
+circuit adder {
+    sel_v tmp<33>;
+
+    par {
+        tmp = a + b;
+        s = tmp<31:0>;
+        c = tmp<32>;
+    }
+}
+```
