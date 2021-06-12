@@ -10,3 +10,23 @@ SFL/NSLで記述したハードウェアがFPGAなどで動作するのかと思
 
 ## 組み合わせ回路
 組み合わせ回路の記述はVerilogとそこまで変わらないです。
+
+```verilog
+module adder (
+    a,
+    b,
+    r,
+    c
+);
+    input [31:0] a;
+    input [31:0] b;
+    output [31:0] r;
+    output c;
+
+    wire [32:0] tmp;
+
+    assign tmp = {1'b0, a} + {1'b0, b};
+    assign r = tmp[31:0];
+    assign c = tmp[32];
+endmodule
+```
