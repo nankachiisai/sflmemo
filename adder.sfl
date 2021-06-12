@@ -1,3 +1,5 @@
+// SFL code
+
 declare adder {
     input a<32>;
     input b<32>;
