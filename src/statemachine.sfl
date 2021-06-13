@@ -1,0 +1,47 @@
+declare statemachine {
+    instrin start;
+}
+
+circuit statemachine {
+    stage_name IF {
+        task x();
+    }
+
+    stage_name DE {
+        task y();
+    }
+
+    stage_name RF {
+        task z();
+    }
+
+    stage_name EX {
+        task v();
+    }
+
+    stage_name WB {
+        task w();
+    }
+
+    instruct start generate IF.x();
+
+    stage IF {
+        relay DE.y();
+    }
+
+    stage DE {
+        relay RF.z();
+    }
+
+    stage RF {
+        relay EX.v();
+    }
+
+    stage EX {
+        relay WB.w();
+    }
+
+    stage WB {
+        relay IF.x();
+    }
+}

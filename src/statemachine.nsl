@@ -1,0 +1,27 @@
+declare statemachine {
+    func_in start();
+}
+
+module statemachine {
+    proc_name IF, DE, RF, EX, WB;
+    func_self s();
+
+    func start {
+        s();
+    }
+
+    func s seq{
+        IF();
+        DE();
+        RF();
+        EX();
+        WB();
+        s();
+    }
+
+    proc IF finish;
+    proc DE finish;
+    proc RF finish;
+    proc EX finish;
+    proc WB finish;
+}

@@ -1,0 +1,20 @@
+declare smtest {
+
+}
+
+declare statemachine {
+    func_in start();
+}
+
+module smtest {
+    statemachine s;
+
+    reg tmp[10] = 0;
+
+    tmp++;
+    if (tmp == 1) {
+        s.start();
+    } else if (&tmp) {
+        _finish();
+    }
+}

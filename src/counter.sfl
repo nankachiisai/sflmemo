@@ -1,0 +1,12 @@
+declare counter {
+    output value<32>;
+}
+
+circuit counter {
+    reg_wr r_counter<32>;
+
+    par {
+        r_counter := r_counter + 1;
+        value = r_counter;
+    }
+}
