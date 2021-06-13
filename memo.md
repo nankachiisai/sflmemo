@@ -233,7 +233,7 @@ module statemachine {
         s();
     }
 
-    func s seq{
+    func s seq {
         IF();
         DE();
         RF();
